@@ -1,0 +1,30 @@
+
+printChar
+
+int printChar(char c)
+The printChar function writes a single character c to the standard output using the write() function, and returns the number of characters written (which is always 1).
+
+Parameters
+c: A single character to be written to the standard output.
+Return Value
+The function returns the number of characters written to the standard output, which is always 1.
+
+printString
+
+int printString(char *s)
+The printString function writes a string s to the standard output by iterating over each character in the string and calling the printChar() function for each character. The function returns the number of characters written.
+
+Parameters
+s: A null-terminated string to be written to the standard output.
+Return Value
+The function returns the number of characters written to the standard output.
+
+printDecimal
+
+int printDecimal(int d)
+The printDecimal function writes an integer d to the standard output as a decimal number by converting each digit to its character representation and calling the write() function for each character. The function returns the total number of characters written.
+
+Parameters
+d: An integer to be written to the standard output as a decimal number.
+Return Value
+The function returns the total number of characters written to the standard output.
