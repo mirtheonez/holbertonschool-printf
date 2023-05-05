@@ -8,9 +8,12 @@
 int _printf(const char *format, ...)
 {
 	int count = 0, i;
+
 	va_list ptr;
+	/* Check if format == NULL */
 	if (format == NULL)
 		return (-1);
+
 	va_start(ptr, format);
 	for (i = 0; format[i] != '\0'; i++)
 	{
@@ -49,3 +52,4 @@ int _printf(const char *format, ...)
 	va_end(ptr);
 	return count;
 }
+
