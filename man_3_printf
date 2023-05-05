@@ -3,10 +3,10 @@
 			  .SH NAME
 			  .B _printf
 			  .SH SYNOPSIS
-				  To use this function the #include "main.h" header is needed.
+				  To use this function the include "main.h" header is needed.
 			  .sp int
 			  _printf(const char *format, ...);
-.SH DESCRIPTION
+bSH DESCRIPTION
 The _printf() function produces output according to a format which is described
 below. This function write its output to the stdout, the standard output stream.
 .SH USAGE
