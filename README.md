@@ -48,4 +48,4 @@ Created on Ubuntu 20.04.3 LTS
 
 Compiled with gcc , using flags: -Wall -Werror -Wextra and -pedantic
 
-Author benhazemnour
+Author Benhazemnour

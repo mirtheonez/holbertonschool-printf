@@ -1,30 +1,30 @@
-
-printChar
-
-int printChar(char c)
-The printChar function writes a single character c to the standard output using the write() function, and returns the number of characters written (which is always 1).
-
-Parameters
-c: A single character to be written to the standard output.
-Return Value
-The function returns the number of characters written to the standard output, which is always 1.
-
-printString
-
-int printString(char *s)
-The printString function writes a string s to the standard output by iterating over each character in the string and calling the printChar() function for each character. The function returns the number of characters written.
-
-Parameters
-s: A null-terminated string to be written to the standard output.
-Return Value
-The function returns the number of characters written to the standard output.
-
-printDecimal
-
-int printDecimal(int d)
-The printDecimal function writes an integer d to the standard output as a decimal number by converting each digit to its character representation and calling the write() function for each character. The function returns the total number of characters written.
-
-Parameters
-d: An integer to be written to the standard output as a decimal number.
-Return Value
-The function returns the total number of characters written to the standard output.
+.TH man 3 "05 Mai 2023"
+		  "_printf man page"
+			  .SH NAME
+			  .B _printf
+			  .SH SYNOPSIS
+				  To use this function the #include "main.h" header is needed.
+			  .sp int
+			  _printf(const char *format, ...);
+.SH DESCRIPTION
+The _printf() function produces output according to a format which is described
+below. This function write its output to the stdout, the standard output stream.
+.SH USAGE
+To use _printf you have to use the following key characters preceeded by % symbol.
+.RS 3
+%c: To be used to print characters
+.RS 0
+%s: To be used to print strings
+.RS 0
+%d: To print integers of max and min size of an int type
+.RS 0
+%i: To print integers of max and min size of an int type
+.SH RETURN VALUES
+The _printf() function returns an integer representing the number of symbols
+printed not counting \\0 for the string.
+.SH BUGS
+Bugs...
+.SH SEE ALSO
+.I printf(3)
+.SH AUTHOR
+Benhazemnour
