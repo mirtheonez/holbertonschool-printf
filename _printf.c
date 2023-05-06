@@ -1,55 +1,23 @@
 #include "main.h"
 /**
- * _printf - just prints
- *
- * @format: the value to print
- * Return: returns amount of characters printed
+ *_printf -prints characters and strings.
+ *@format:input var
+ *Return:an integer.
  */
 int _printf(const char *format, ...)
 {
-	int count = 0, i;
+	va_list liste;
+	int l = 0;
 
-	va_list ptr;
-	/* Check if format == NULL */
+	va_start(liste, format);
 	if (format == NULL)
-		return (-1);
-
-	va_start(ptr, format);
-	for (i = 0; format[i] != '\0'; i++)
 	{
-		if (format[i] == '%')
-		{
-			switch (format[i + 1])
-			{
-			case 's':
-				i++;
-				count += printString(va_arg(ptr, char *));
-				break;
-			case 'c':
-				i++;
-				count += printChar(va_arg(ptr, int));
-				break;
-			case 'd':
-				i++;
-				count += printDecimal(va_arg(ptr, int));
-				break;
-			case 'i':
-				i++;
-				count += printDecimal(va_arg(ptr, int));
-				break;
-			case '%':
-				break;
-			case '\0':
-				return (-1);
-			default:
-				count += printChar(format[i]);
-				continue;
-			}
-		}
-		else
-			count += printChar(format[i]);
+		return (-1);
 	}
-	va_end(ptr);
-	return count;
+	else
+	{
+		l = normal_process(format, 0, liste);
+	}
+	va_end(liste);
+	return (l);
 }
-
