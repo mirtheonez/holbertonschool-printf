@@ -27,11 +27,13 @@ char *convert(long int num, int base, int flags, params_t *params)
 	ptr = &buffer[49];
 	*ptr = '\0';
 
-	do
 	{
-		*--ptr = array[n % base];
+		do
+			*--ptr = array[n % base];
 		n /= base;
-	} while (n != 0);
+	}
+	while (n != 0)
+		;
 
 	if (sign)
 		*--ptr = sign;
