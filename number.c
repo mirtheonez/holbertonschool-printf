@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include <stdarg.h>
+#include <string.h>
 #include "main.h"
 
 /**
@@ -27,13 +30,11 @@ char *convert(long int num, int base, int flags, params_t *params)
 	ptr = &buffer[49];
 	*ptr = '\0';
 
+	do
 	{
-		do
-			*--ptr = array[n % base];
+		*--ptr = array[n % base];
 		n /= base;
-	}
-	while (n != 0)
-		;
+	} while (n != 0);
 
 	if (sign)
 		*--ptr = sign;
@@ -80,4 +81,45 @@ int print_address(va_list ap, params_t *params)
 	*--str = 'x';
 	*--str = '0';
 	return (print_number(str, params));
+}
+
+/**
+ * print_char - prints character
+ * @ap: argument pointer
+ * @params: the parameters struct
+ *
+ * Return: bytes printed
+ */
+int print_char(va_list ap, params_t *params)
+{
+	char c = va_arg(ap, int);
+	char padding = ' ';
+
+	if (params->zero_pad)
+		padding = '0';
+
+	if (!params->l_modifier)
+		return (_putchar(c));
+
+	while (params->width-- > 1)
+		_putchar(padding);
+
+	if (params->l_modifier)
+		_putchar(c);
+
+	return (params->width > 0 ? params->width : 1);
+}
+
+/**
+ * print_number - prints numbers
+ * @str: string
+ * @params: the parameters struct
+ *
+ * Return: bytes printed
+ */
+int print_number(char *str, params_t *params)
+{
+	int len = 0;
+	int prec = params->precision;
+	int width = params->width;
 }
