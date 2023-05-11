@@ -35,6 +35,12 @@ int checkFormat(va_list ptr, char formatChar, int *i)
 		return (printDecimal(va_arg(ptr, int)));
 		/* added break as hinted in the guide to use switch in C language */
 		break;
+	case 'b':
+		/* Move index forward to not print the 'i' */
+		(*i)++;
+		return (printBinary(va_arg(ptr, int)));
+		/* added break as hinted in the guide to use switch in C language */
+		break;
 	case '%':
 		(*i)++;
 		return (printChar(formatChar));

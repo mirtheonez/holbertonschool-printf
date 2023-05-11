@@ -12,5 +12,6 @@ char *parseInt(int d);
 int printDecimal(int d);
 int printString(char *s);
 int checkFormat(va_list ptr, char formatChar, int *i);
+int printBinary(int b);
 
 #endif
