@@ -72,6 +72,7 @@ int printBinary(int b)
 	int binary = 0;
 	int place = 1;
 	int remainder;
+
 	while (b > 0)
 	{
 		remainder = b % 2;
@@ -79,5 +80,5 @@ int printBinary(int b)
 		place *= 10;
 		b /= 2;
 	}
-	return printDecimal(binary);
+	return (printDecimal(binary));
 }
