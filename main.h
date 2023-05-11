@@ -11,5 +11,6 @@ char *_strcat(char *destination, const char *source);
 char *parseInt(int d);
 int printDecimal(int d);
 int printString(char *s);
+int checkFormat(va_list ptr, char formatChar, int *i);
 
 #endif

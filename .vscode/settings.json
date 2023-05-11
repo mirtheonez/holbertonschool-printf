@@ -1,6 +1,7 @@
 {
   "files.associations": {
-    "man_3_printf": "cpp"
+    "man_3_printf": "cpp",
+    "algorithm": "c"
   },
   "C_Cpp.errorSquiggles": "disabled"
 }
