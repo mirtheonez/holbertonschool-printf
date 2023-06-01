@@ -13,26 +13,23 @@ int checkFormat(va_list ptr, char formatChar, int *i)
 	{
 	case 's':
 		(*i)++;
-		return (printString(va_arg(ptr, char *)));
+		return (print_string(ptr));
 	case 'c':
 		(*i)++;
-		return (printChar(va_arg(ptr, int)));
+		return (print_character(ptr));
 	case 'd':
 		(*i)++;
-		return (printDecimal(va_arg(ptr, int)));
+		return (print_decimal(ptr));
 	case 'i':
 		(*i)++;
-		return (printDecimal(va_arg(ptr, int)));
-	case 'b':
-		(*i)++;
-		return (printBinary(va_arg(ptr, int)));
+		return (print_decimal(ptr));
 	case '%':
 		(*i)++;
-		return (printChar(formatChar));
+		return (print_character(ptr));
 	case '\0':
 		return (-1);
 	default:
-		return (printChar(formatChar));
+		return (print_character(ptr));
 	}
 	return (0);
 }
